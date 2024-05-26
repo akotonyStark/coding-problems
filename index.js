@@ -1,29 +1,27 @@
-
 /* 
 Problem 1
 Given an array of integers and target value, remove all occurences of the target in-place,
 Move the remaining elements to the front of the array, and return the number of elements not equal to target
 */
 
+function removeTargetAndRearrangeArray(target = 2, arr = [4, 1, 2, 5, 2, 3]) {
+    let occurences = [];
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] == target) {
+            occurences.push(arr[i]);
+            arr.splice(i, 1);
+        }
+    }
+    arr = [...arr, ...occurences];
+    console.log("rearranged array", arr);
 
-function removeTargetAndRearrangeArray(target = 2, arr = [4,1,2,5,2,3]){
-    let occurences = []
-    let count = 0
-    for(let i=0; i<arr.length; i++){
-        if(arr[i] == target){
-            occurences.push(arr[i])
-            arr.splice(i,1)
+    for (num of arr) {
+        if (num != target) {
+            count++;
         }
     }
-    arr = [...arr,...occurences]
-    console.log("rearranged array", arr)
-    
-    for(num of arr){
-        if(num != target){
-            count++
-        }
-    }
-    console.log("number of elements not equal to target", count)
+    console.log("number of elements not equal to target", count);
 }
 
 /* 
@@ -33,12 +31,43 @@ Design a system that suggests at most 3 product names from the products after ea
 Suggested products should have a common prefix with searchWord. 
 If there are more than 3 products with common prefix, return the three lexicographically minimum products
 */
-function searchSuggestionSystem(products, searchWord){
-    products.sort()
-    console.log(products, searchWord) 
-    let suggestions = products.filter((item) => item.includes(searchWord))
-    console.log("Suggestions", suggestions.slice(0,3))
+function searchSuggestionSystem(products, searchWord) {
+    products.sort();
+    console.log(products, searchWord);
+    let suggestions = products.filter((item) => item.includes(searchWord));
+    console.log("Suggestions", suggestions.slice(0, 3));
+}
+
+/* 
+Problem 3 - K Closest Points to Origin
+Given an array of points where points[i] = [xi, yi] represents a point on the X-Y plane and an integer k, return the k closest points to the origin (0, 0).
+
+The distance between two points on the X-Y plane is the Euclidean distance (i.e., √(x1 - x2)2 + (y1 - y2)2).
+
+You may return the answer in any order. The answer is guaranteed to be unique (except for the order that it is in).
+*/
+
+function kClosestPoint(list, k) {
+    let results = [];
+    let distances = [];
+
+    for ([x, y] of list) {
+        let distance = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
+        distances.push({ distance, points: [x, y] });
+    }
+
+    //now we wanna sort our distances in descending order
+    distances.sort((a, b) => b.distance - a.distance);
+    console.log(distances);
+
+    while (k > 0) {
+        let { points } = distances.pop();
+        results.push(points);
+        k--;
+    }
+    console.log(results)
 }
 
 removeTargetAndRearrangeArray()
 searchSuggestionSystem(["mobile", "mouse", "moneypot", "monitor", "mousepad"], "mouse")
+kClosestPoint((list = [[3, 3],[5, -1],[-2, 4]]),(k = 2));
