@@ -47,7 +47,7 @@ The distance between two points on the X-Y plane is the Euclidean distance (i.e.
 You may return the answer in any order. The answer is guaranteed to be unique (except for the order that it is in).
 */
 
-function kClosestPoint(list, k) {
+function kClosestPoint(list, k) { 
     let results = [];
     let distances = [];
 
@@ -68,6 +68,71 @@ function kClosestPoint(list, k) {
     console.log(results)
 }
 
-removeTargetAndRearrangeArray()
-searchSuggestionSystem(["mobile", "mouse", "moneypot", "monitor", "mousepad"], "mouse")
-kClosestPoint((list = [[3, 3],[5, -1],[-2, 4]]),(k = 2));
+/* Problem 4
+You are given an array of logs. Each log is a space-delimited string of words, where the first word is the identifier.
+
+There are two types of logs:
+
+Letter-logs: All words (except the identifier) consist of lowercase English letters.
+Digit-logs: All words (except the identifier) consist of digits.
+Reorder these logs so that:
+
+The letter-logs come before all digit-logs.
+The letter-logs are sorted lexicographically by their contents. If their contents are the same, then sort them lexicographically by their identifiers.
+The digit-logs maintain their relative ordering.
+Return the final order of the logs.
+
+ */
+
+
+function reOrderDataLogFiles(logs){
+    let arr = []
+    for(let log of logs){
+        let subArr = log.split(' ')
+        arr.push(subArr)
+    }
+
+    //console.log(arr)
+    let numLogs = []
+    let letterLogs = []
+
+    for(let log of arr){
+        if(log.every((digit) => isNaN(digit))){
+            letterLogs.push(log)
+        }
+        else{
+            numLogs.push(log)
+        }
+    }
+    let sorted = letterLogs.map((log) =>  log.slice(1)).sort()
+
+    for(let x of sorted){
+        // console.log('x:', x)
+        for(let y of letterLogs){
+            // console.log('y:', y)
+            if(x.every(val => y.includes(val))){
+                x.unshift(y[0])
+            }
+        }
+    }
+
+    console.log("letter logs", sorted)
+    console.log("digit logs", numLogs)
+
+    
+   let temp =  [...sorted, ...numLogs]
+   let results = []
+   for(let value of temp){
+        results.push(value.join(' '))
+   }
+
+   console.log("Results", results)
+
+
+
+}
+
+// removeTargetAndRearrangeArray()
+// searchSuggestionSystem(["mobile", "mouse", "moneypot", "monitor", "mousepad"], "mouse")
+// kClosestPoint((list = [[3, 3],[5, -1],[-2, 4]]),(k = 2));
+reOrderDataLogFiles(logs = ["dig1 8 1 5 1","let1 art can","dig2 3 6","let2 own kit dig","let3 art zero"])
