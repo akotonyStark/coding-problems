@@ -127,12 +127,48 @@ function reOrderDataLogFiles(logs){
    }
 
    console.log("Results", results)
+}
 
 
+function fibbo(n){
+    let arr = [0,1]
+    for(let i=2; i<=n; i++){
+        arr[i] = arr[i-1] + arr[i-2]
+    }
+    console.log(arr)
+}
 
+function recursiveFibbo(n){
+    if(n<=1){
+        return n
+    }
+    else{
+        return recursiveFibbo(n-1) + recursiveFibbo(n-2)
+    }
+}
+
+//brute force factorial
+function fact(n){
+    let fact = 1
+    for(let i=1; i<=n; i++){
+        fact = fact * i
+    }
+    return fact
+}
+
+//using recursion
+function factorial(n){
+    if(n<=1){
+        return 1
+    }
+    return n * factorial(n-1)
 }
 
 // removeTargetAndRearrangeArray()
 // searchSuggestionSystem(["mobile", "mouse", "moneypot", "monitor", "mousepad"], "mouse")
 // kClosestPoint((list = [[3, 3],[5, -1],[-2, 4]]),(k = 2));
-reOrderDataLogFiles(logs = ["dig1 8 1 5 1","let1 art can","dig2 3 6","let2 own kit dig","let3 art zero"])
+//reOrderDataLogFiles(logs = ["dig1 8 1 5 1","let1 art can","dig2 3 6","let2 own kit dig","let3 art zero"])
+fibbo(10)
+console.log(recursiveFibbo(10))
+console.log(fact(5))
+console.log(factorial(5))
