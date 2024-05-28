@@ -164,11 +164,22 @@ function factorial(n){
     return n * factorial(n-1)
 }
 
+/*is subsequence problem
+    Given two strings s and t, return true if s is a subsequence of t, or false if otherwise
+*/
+
+function isSubsequence(s,t){
+    let ss = s.split('')
+    let tt = t.split('')
+
+    return ss.every((element) => tt.includes(element))
+}
 // removeTargetAndRearrangeArray()
 // searchSuggestionSystem(["mobile", "mouse", "moneypot", "monitor", "mousepad"], "mouse")
 // kClosestPoint((list = [[3, 3],[5, -1],[-2, 4]]),(k = 2));
 //reOrderDataLogFiles(logs = ["dig1 8 1 5 1","let1 art can","dig2 3 6","let2 own kit dig","let3 art zero"])
-fibbo(10)
-console.log(recursiveFibbo(10))
-console.log(fact(5))
-console.log(factorial(5))
+//fibbo(10)
+//console.log(recursiveFibbo(10))
+//console.log(fact(5))
+//console.log(factorial(5))
+console.log(isSubsequence('ace', 'abcde'))

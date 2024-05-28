@@ -16,17 +16,17 @@ function binarySearch(list, target){
     while(left <= right){
         let mid = Math.floor(list.length/2)
         if(list[mid] == target){
-            console.log("Found", target, " at position ", mid)
+            console.log("Found ", target)
             break
         }
         else if(target < list[mid]){
             right = mid - 1 
-            console.log("Found", target, "on the left at position ", right)
+            console.log("Found ", target)
             break
         }
         else{
             left = mid + 1
-            console.log("Found", target, "on the right at position ", left)
+            console.log("Found ", target)
             break
         }
     }
