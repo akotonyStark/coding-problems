@@ -174,6 +174,34 @@ function isSubsequence(s,t){
 
     return ss.every((element) => tt.includes(element))
 }
+
+/*
+You are given two strings word1 and word2. Merge the strings by adding letters in alternating order, starting with word1. 
+If a string is longer than the other, append the additional letters onto the end of the merged string.
+
+Example 1:
+
+Input: word1 = "abc", word2 = "pqr"
+Output: "apbqcr"
+*/
+
+function merger(word1, word2){
+    word1Arr = word1.split('')
+    word2Arr = word2.split('')
+    let merged = []
+   
+        for(let i=0; i<Math.max(word1.length, word2.length); i++){
+            if(i < word1.length){
+               merged.push(word1[i])
+            }
+            if(i < word2.length){
+               merged.push(word2[i]) 
+            }
+        }
+    console.log(merged.join(''))
+}
+
+
 // removeTargetAndRearrangeArray()
 // searchSuggestionSystem(["mobile", "mouse", "moneypot", "monitor", "mousepad"], "mouse")
 // kClosestPoint((list = [[3, 3],[5, -1],[-2, 4]]),(k = 2));
@@ -183,3 +211,4 @@ function isSubsequence(s,t){
 //console.log(fact(5))
 //console.log(factorial(5))
 console.log(isSubsequence('ace', 'abcde'))
+merger("abcd", "pq")
