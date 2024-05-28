@@ -4,18 +4,41 @@ function swap(a,b){
     b = temp
     return [a,b]
 }
-function bubbleSort(list){
-    for(let i=0; i<list.length; i++){
-        for(let j=0; j<list.length - i; j++){
-            if(list[j] > list[j+1]){
-                //swap(list[i],list[i+1])
-                let temp = list[j]
-                list[j] = list[j+1]
-                list[j+1] = temp
+
+//with bubble sort, a sorted array starts to form at the end of the list so you reduce the length by i for each iteration
+
+function bubbleSort(arr){
+    console.log(arr)
+    for(let i=0; i<arr.length; i++){
+        for(let j=0; j<arr.length - i; j++){
+        
+            //swap if arr[j] > arr[j+1] to bubble the largest number to the end
+            if(arr[j] > arr[j+1]){
+                let temp = arr[j]
+                arr[j] = arr[j+1]
+                arr[j+1] = temp
             }
         }
     }
-    console.log(list)
-} //Worst case is O(n)squared best case is O(n)
+    console.log(arr)
+}
 
-bubbleSort([3,5,3,7,9,1,8,8,0,5,22,5,7,89,11])
+function selectionSort(arr){
+    console.log(arr)
+    for(let i=0; i<arr.length; i++){
+        let min = arr[i]
+        for(let j=i; j<arr.length; j++){
+            if(arr[i] > arr[j]){
+                //swap
+                let temp = arr[i]
+                arr[i] = arr[j]
+                arr[j] = temp
+            }
+        }
+    }
+    console.log(arr)
+}
+
+
+bubbleSort([3,5,3,7,9])
+selectionSort([3,5,3,7,9,1])
