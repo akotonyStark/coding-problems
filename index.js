@@ -201,6 +201,27 @@ function merger(word1, word2){
     console.log(merged.join(''))
 }
 
+/*
+Given a non-empty array of integer "nums", every integer appears twice
+except for one. find that number
+*/
+
+function singleNumber(nums){
+    let obj = {}
+    nums.forEach(element => {
+        obj[element] = ++obj[element] || 1
+    });
+    return obj
+}
+
+function singleNumberSolutionTwo(nums){
+    let map = nums.reduce((obj, x) => {
+        obj[x] = ++obj[x] || 1
+        return obj
+    })
+    return map
+}
+
 
 // removeTargetAndRearrangeArray()
 // searchSuggestionSystem(["mobile", "mouse", "moneypot", "monitor", "mousepad"], "mouse")
@@ -210,5 +231,7 @@ function merger(word1, word2){
 //console.log(recursiveFibbo(10))
 //console.log(fact(5))
 //console.log(factorial(5))
-console.log(isSubsequence('ace', 'abcde'))
-merger("abcd", "pq")
+//console.log(isSubsequence('ace', 'abcde'))
+//merger("abcd", "pq")
+console.log(singleNumber([1,2,2,1,4,3,3]))
+console.log(singleNumberSolutionTwo([1,2,2,1,4,3,3]))
