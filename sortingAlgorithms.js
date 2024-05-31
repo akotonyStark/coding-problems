@@ -1,44 +1,35 @@
-function swap(a,b){
-    let temp = a
-    a = b
-    b = temp
-    return [a,b]
-}
 
-//with bubble sort, a sorted array starts to form at the end of the list so you reduce the length by i for each iteration
+function insertionSort(arr){
+
+    //start from position 1
+    for(let i=1; i<arr.length; i++){
+        let currentElement = arr[i]
+        let lastIndex = i - 1
+
+        while(lastIndex >=0 && currentElement < arr[lastIndex]){
+            arr[lastIndex + 1] = arr[lastIndex]
+            lastIndex--
+        }
+        arr[lastIndex + 1] = currentElement
+    }
+    console.log(arr)
+}
 
 function bubbleSort(arr){
-    console.log(arr)
+   
     for(let i=0; i<arr.length; i++){
-        for(let j=0; j<arr.length - i; j++){
-        
-            //swap if arr[j] > arr[j+1] to bubble the largest number to the end
+        for(let j=0; j<arr.length - 1; j++){
             if(arr[j] > arr[j+1]){
-                let temp = arr[j]
-                arr[j] = arr[j+1]
-                arr[j+1] = temp
-            }
-        }
-    }
-    console.log(arr)
-}
-
-function selectionSort(arr){
-    console.log(arr)
-    for(let i=0; i<arr.length; i++){
-        let min = arr[i]
-        for(let j=i; j<arr.length; j++){
-            if(arr[i] > arr[j]){
-                //swap
-                let temp = arr[i]
-                arr[i] = arr[j]
+                let temp = arr[j+1]
+                arr[j+1] = arr[j]
                 arr[j] = temp
             }
+            
         }
     }
+
     console.log(arr)
 }
-
-
-bubbleSort([3,5,3,7,9])
-selectionSort([3,5,3,7,9,1])
+ bubbleSort([3,5,3,7,9])
+// selectionSort([3,5,3,7,9,1])
+//insertionSort([8,2,4,1,3])
