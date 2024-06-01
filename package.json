@@ -5,7 +5,8 @@
     "dev": "nodemon index.js",
     "sorting": "nodemon sortingAlgorithms.js",
     "search": "nodemon searchAlgorithms.js",
-    "tree": "nodemon treeAlgorithms.js"
+    "tree": "nodemon treeAlgorithms.js",
+    "list": "nodemon lists.js"
   },
   "dependencies": {
     "nodemon": "^3.1.1"
