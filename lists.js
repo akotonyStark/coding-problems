@@ -70,6 +70,9 @@ class LinkedList{
 
     }
 
+
+    //remove at index
+
     //get at any index
     getAt(index){
         let current = this.head
@@ -94,6 +97,11 @@ class LinkedList{
             console.log(current.data)
             current = current.next
         }
+    }
+
+    clearList(){
+        this.head = null
+        this.size = 0
     }
 }
 

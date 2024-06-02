@@ -30,6 +30,19 @@ function bubbleSort(arr){
 
     console.log(arr)
 }
- bubbleSort([3,5,3,7,9])
-// selectionSort([3,5,3,7,9,1])
+
+function selectionSort(arr){
+    for(let i=0; i<arr.length; i++){
+        for(let j=i; j<arr.length; j++){
+            if(arr[i] > arr[j]){
+                let temp = arr[j]
+                arr[j] = arr[i]
+                arr[i] = temp
+            }
+        }
+    }
+    console.log(arr)
+}
+bubbleSort([3,5,3,7,9])
+selectionSort([3,5,3,7,9,1])
 //insertionSort([8,2,4,1,3])
