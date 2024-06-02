@@ -223,6 +223,71 @@ function singleNumberSolutionTwo(nums){
 }
 
 
+/* For two strings s and t, we say "t divides s" if and only if s = t + t + t + ... + t + t (i.e., t is concatenated with itself one or more times).
+Given two strings str1 and str2, return the largest string x such that x divides both str1 and str2.
+
+ 
+Example 1:
+
+Input: str1 = "ABCABC", str2 = "ABC"
+Output: "ABC"
+
+Example 2:
+
+Input: str1 = "ABABAB", str2 = "ABAB"
+Output: "AB"
+Example 3:
+
+Input: str1 = "LEET", str2 = "CODE"
+Output: ""
+*/
+
+function gcdOfStrings(str1, str2){
+    //first check if str2 is a subset of str1
+    if(!str1.includes(str2)){
+        return ""
+    }
+    else{
+        
+    }
+}
+
+/*
+The maximum contiguous subarray problem is the task of finding the largest possible sum of a contiguous subarray,
+ within a given one-dimensional array A[1...n] of numbers.
+
+ take arr = [-2,1,-3,4,-1,2,1,-5,4]
+*/
+
+function maxContiguousSubArr(arr){
+    //first break the array into multiple subarrays
+
+    let arrOfSubArrays = []
+    let arrOfSubArraySums = []
+    for(let i=0; i<arr.length; i++){
+        for(let j=1;j<arr.length; j++){
+            //console.log(i,j)
+            let x = arr.slice(i, j)
+            //if(x.length>0)
+            arrOfSubArrays.push(x)
+            let sumOfX = x.reduce((total, item) => total + item,0)
+            arrOfSubArraySums.push(sumOfX)
+        }
+        
+        
+    }
+
+    //  console.log("SubArrays", arrOfSubArrays)
+    //  console.log(arrOfSubArraySums)
+    let maxSum = Math.max(...arrOfSubArraySums)
+    let indexOfMaxSum = arrOfSubArraySums.indexOf(maxSum)
+    let maxSubArray = arrOfSubArrays[indexOfMaxSum]
+    console.log(maxSubArray)
+}
+
+maxContiguousSubArr([-2,1,-3,4,-1,2,1,-5,4])
+
+
 // removeTargetAndRearrangeArray()
 // searchSuggestionSystem(["mobile", "mouse", "moneypot", "monitor", "mousepad"], "mouse")
 // kClosestPoint((list = [[3, 3],[5, -1],[-2, 4]]),(k = 2));
@@ -233,5 +298,5 @@ function singleNumberSolutionTwo(nums){
 //console.log(factorial(5))
 //console.log(isSubsequence('ace', 'abcde'))
 //merger("abcd", "pq")
-console.log(singleNumber([1,2,2,1,4,3,3]))
-console.log(singleNumberSolutionTwo([1,2,2,1,4,3,3]))
+//console.log(singleNumber([1,2,2,1,4,3,3]))
+//console.log(singleNumberSolutionTwo([1,2,2,1,4,3,3]))
