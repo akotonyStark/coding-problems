@@ -242,15 +242,7 @@ Input: str1 = "LEET", str2 = "CODE"
 Output: ""
 */
 
-function gcdOfStrings(str1, str2){
-    //first check if str2 is a subset of str1
-    if(!str1.includes(str2)){
-        return ""
-    }
-    else{
-        
-    }
-}
+
 
 /*
 The maximum contiguous subarray problem is the task of finding the largest possible sum of a contiguous subarray,
@@ -285,7 +277,39 @@ function maxContiguousSubArr(arr){
     console.log(maxSubArray)
 }
 
-maxContiguousSubArr([-2,1,-3,4,-1,2,1,-5,4])
+
+
+/* There are n kids with candies. You are given an integer array candies, where each candies[i] represents the number of candies the ith kid has,
+ and an integer extraCandies, denoting the number of extra candies that you have.
+
+Return a boolean array result of length n, where result[i] is true if, after giving the ith kid all the extraCandies, 
+they will have the greatest number of candies among all the kids, or false otherwise.
+
+Note that multiple kids can have the greatest number of candies.
+
+Input: candies = [2,3,5,1,3], extraCandies = 3
+Output: [true,true,true,false,true] 
+*/
+
+function kidsWithCandies(candies, extra){
+    let currentMaxCandy = Math.max(...candies)
+    let results = []
+    for(let i=0; i<candies.length; i++){
+        if((candies[i]+extra) >= currentMaxCandy){
+            results.push(true)
+        }
+        else{
+            results.push(false)
+        }
+    }
+
+    console.log(results)
+}
+
+
+
+
+
 
 
 // removeTargetAndRearrangeArray()
@@ -300,3 +324,5 @@ maxContiguousSubArr([-2,1,-3,4,-1,2,1,-5,4])
 //merger("abcd", "pq")
 //console.log(singleNumber([1,2,2,1,4,3,3]))
 //console.log(singleNumberSolutionTwo([1,2,2,1,4,3,3]))
+//maxContiguousSubArr([-2,1,-3,4,-1,2,1,-5,4])
+kidsWithCandies([2,3,5,1,3],  3)
