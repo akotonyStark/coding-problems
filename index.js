@@ -330,7 +330,22 @@ function canPlaceFlowers(flowerbed, n){
    console.log(flowerbed, n == 0 ? true : false)
 }
 
-canPlaceFlowers([1,0,0,0,1], 1)
+
+/*
+Given an input string s, reverse the order of the words.
+
+A word is defined as a sequence of non-space characters. The words in s will be separated by at least one space.
+
+Return a string of the words in reverse order concatenated by a single space.
+
+Note that s may contain leading or trailing spaces or multiple spaces between two words. The returned string should only have a single space separating the words. Do not include any extra spaces.
+*/
+
+function reverseWords(s){
+    let arrOfWords = s.split(' ')
+    console.log(arrOfWords.reverse().join(' '))
+}
+
 
 
 
@@ -351,3 +366,5 @@ canPlaceFlowers([1,0,0,0,1], 1)
 //console.log(singleNumberSolutionTwo([1,2,2,1,4,3,3]))
 //maxContiguousSubArr([-2,1,-3,4,-1,2,1,-5,4])
 //kidsWithCandies([2,3,5,1,3],  3)
+//canPlaceFlowers([1,0,0,0,1], 1)
+//reverseWords('the sky is blue')
