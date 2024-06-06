@@ -380,11 +380,63 @@ function productExceptSelf(arr){
 
 productExceptSelf([1,2,3,4])
 
+/*
+You are given an integer array nums. You are initially positioned at the array's first index, and each element in the array represents your maximum jump length at that position.
+
+Return true if you can reach the last index, or false otherwise.
+
+ 
+
+Example 1:
+
+Input: nums = [2,3,1,1,4]
+Output: true
+Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.
+*/
+
+function canJump(){
+
+}
+
+
+/*
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+You can return the answer in any order.
+
+ 
+
+Example 1:
+
+Input: nums = [2,7,11,15], target = 9
+Output: [0,1]
+Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+*/
 
 
 
+/* Write a function that will verify if a string has balanced parenthesis
+Example:
+isBalanced('()()(())') => true
+*/
 
-// removeTargetAndRearrangeArray()
+function isBalanced(str){
+    let stack = []
+    for(let char of str){
+        if(char === '('){
+            stack.push(char)
+        }
+        else if(stack.pop() !== '('){
+            return false
+        }
+    }
+    return stack.length !== 0 ? false : true 
+}
+
+
+removeTargetAndRearrangeArray()
 // searchSuggestionSystem(["mobile", "mouse", "moneypot", "monitor", "mousepad"], "mouse")
 // kClosestPoint((list = [[3, 3],[5, -1],[-2, 4]]),(k = 2));
 //reOrderDataLogFiles(logs = ["dig1 8 1 5 1","let1 art can","dig2 3 6","let2 own kit dig","let3 art zero"])
@@ -400,3 +452,4 @@ productExceptSelf([1,2,3,4])
 //kidsWithCandies([2,3,5,1,3],  3)
 //canPlaceFlowers([1,0,0,0,1], 1)
 //reverseWords('the sky is blue')
+console.log("Is balanced isBalanced('()()(())')", isBalanced('()()(())'))
