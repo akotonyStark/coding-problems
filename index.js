@@ -435,6 +435,16 @@ function isBalanced(str){
     return stack.length !== 0 ? false : true 
 }
 
+/* Write a function that will return a unique values from an array
+Example: removeDuplicates('eded') => ['e','d']
+*/
+
+function removeDuplicates(str){
+    let arr = str.split('')
+    let uniqueValues = [...new Set(arr)]
+    return uniqueValues
+}
+
 
 removeTargetAndRearrangeArray()
 // searchSuggestionSystem(["mobile", "mouse", "moneypot", "monitor", "mousepad"], "mouse")
@@ -453,3 +463,4 @@ removeTargetAndRearrangeArray()
 //canPlaceFlowers([1,0,0,0,1], 1)
 //reverseWords('the sky is blue')
 console.log("Is balanced isBalanced('()()(())')", isBalanced('()()(())'))
+console.log(" removeDuplicates('ededabaaecev')", removeDuplicates('ededabaaecev'))
