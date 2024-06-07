@@ -445,6 +445,24 @@ function removeDuplicates(str){
     return uniqueValues
 }
 
+/* Get the character that is most commonly used in a string
+Example getMaxChar('aaabbc') => //a
+*/
+
+function getMaxChar(str){
+    let arr = str.split('')
+    let map = {}
+    arr.forEach((char) => {
+        map[char] = ++map[char] || 1
+    })
+
+   let values = Object.values(map)
+   let max = Math.max(...values)
+   //console.log(Object.keys(map))
+   let mostOccuringChar = Object.keys(map).find((key) => map[key] == max)
+   console.log("Most Common Character is ", mostOccuringChar)
+}
+
 
 removeTargetAndRearrangeArray()
 // searchSuggestionSystem(["mobile", "mouse", "moneypot", "monitor", "mousepad"], "mouse")
@@ -462,5 +480,6 @@ removeTargetAndRearrangeArray()
 //kidsWithCandies([2,3,5,1,3],  3)
 //canPlaceFlowers([1,0,0,0,1], 1)
 //reverseWords('the sky is blue')
-console.log("Is balanced isBalanced('()()(())')", isBalanced('()()(())'))
-console.log(" removeDuplicates('ededabaaecev')", removeDuplicates('ededabaaecev'))
+// console.log("Is balanced isBalanced('()()(())')", isBalanced('()()(())'))
+// console.log(" removeDuplicates('ededabaaecev')", removeDuplicates('ededabaaecev'))
+getMaxChar('aaabbcppppp')
