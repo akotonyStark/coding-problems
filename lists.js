@@ -69,8 +69,6 @@ class LinkedList{
         this.size++
 
     }
-
-
     //remove at index
 
     //get at any index
@@ -88,8 +86,6 @@ class LinkedList{
 
         return null
     }
-
-
     //print list
     printListData(){
         let current = this.head
